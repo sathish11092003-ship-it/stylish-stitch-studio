@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stylish Stitch Studio</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#f5f5f5;
+}
+
+header{
+background:#8B4513;
+color:white;
+text-align:center;
+padding:15px;
+font-size:28px;
+font-weight:bold;
+}
+
+.page{
+display:none;
+padding:15px;
+}
+
+#home{
+display:block;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+}
+
+.card{
+background:white;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 4px 10px rgba(0,0,0,.2);
+cursor:pointer;
+transition:.3s;
+}
+
+.card:hover{
+transform:scale(1.03);
+}
+
+.card img{
+width:100%;
+height:auto;
+max-height:none;
+object-fit:contain;
+display:block;
+}
+
+.card h3{
+text-align:center;
+padding:10px;
+font-size:18px;
+}
+
+button{
+width:90%;
+margin:10px auto 15px;
+display:block;
+padding:10px;
+background:#8B4513;
+color:white;
+border:none;
+border-radius:30px;
+font-size:16px;
+cursor:pointer;
+}
+
+.back{
+margin-bottom:15px;
+}
+
+/* Floating WhatsApp + Location controls */
+.whatsapp-float{
+position:fixed;
+right:18px;
+bottom:78px;
+width:56px;
+height:56px;
+border-radius:50%;
+background:#25D366;
+color:white;
+display:flex;
+align-items:center;
+justify-content:center;
+text-decoration:none;
+font-size:0;
+box-shadow:0 4px 12px rgba(0,0,0,.28);
+z-index:9999;
+}
+.whatsapp-float svg{width:32px;height:32px;fill:#fff;}
+.whatsapp-float:active{transform:scale(.94);}
+.location-bottom{
+position:fixed;
+left:50%;
+bottom:15px;
+transform:translateX(-50%);
+background:#8B4513;
+color:white;
+text-decoration:none;
+padding:11px 24px;
+border-radius:28px;
+font-size:15px;
+font-weight:bold;
+box-shadow:0 4px 12px rgba(0,0,0,.25);
+z-index:9998;
+white-space:nowrap;
+}
+.location-bottom:active{transform:translateX(-50%) scale(.96);}
+
+.phone-bottom{
+position:fixed;
+left:16px;
+bottom:15px;
+background:#8B4513;
+color:white;
+text-decoration:none;
+padding:11px 16px;
+border-radius:28px;
+font-size:14px;
+font-weight:bold;
+box-shadow:0 4px 12px rgba(0,0,0,.25);
+z-index:9998;
+white-space:nowrap;
+}
+.phone-bottom:active{transform:scale(.96);}
+@media(max-width:480px){
+.phone-bottom{left:10px;bottom:12px;font-size:13px;padding:10px 13px;}
+.location-bottom{bottom:12px;}
+}
+
+@media(max-width:480px){
+.grid{gap:10px;}
+.card h3{font-size:15px;padding:8px;}
+.whatsapp-float{right:14px;bottom:72px;width:52px;height:52px;font-size:0;}
+.location-bottom{bottom:12px;font-size:14px;padding:10px 22px;}
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+Stylish Stitch Studio
+</header>
+
+<a class="whatsapp-float" href="https://wa.me/919484374018" target="_blank" aria-label="WhatsApp">
+<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3.2C9 3.2 3.3 8.8 3.3 15.8c0 2.2.6 4.3 1.7 6.1L3.2 28.8l7-1.8c1.7.9 3.7 1.4 5.8 1.4 7 0 12.7-5.7 12.7-12.6S23 3.2 16 3.2zm0 22.9c-1.9 0-3.7-.5-5.2-1.4l-.4-.2-4.1 1.1 1.1-4-.3-.4c-1-1.6-1.5-3.4-1.5-5.3C5.6 10 10.3 5.5 16 5.5s10.4 4.6 10.4 10.3S21.7 26.1 16 26.1zm5.7-7.7c-.3-.2-1.8-.9-2.1-1s-.5-.2-.7.2c-.2.3-.8 1-.9 1.2-.2.2-.3.2-.6.1-1.5-.7-2.6-1.3-3.7-2.9-.3-.5.3-.5.9-1.7.1-.2.1-.4 0-.6-.1-.2-.7-1.7-.9-2.3-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.7s1.2 3.1 1.4 3.3c.2.2 2.3 3.5 5.6 4.9 2.1.9 2.9 1 3.9.8.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.4z"/></svg>
+</a>
+<a class="location-bottom" href="https://www.google.com/maps/search/?api=1&query=Madurai%2C%20Tamil%20Nadu%2C%20India" target="_blank">📍 Location</a>
+<a class="phone-bottom" href="tel:+919484374018">📞 94843 74018</a>
+
+<!-- HOME PAGE -->
+
+<div id="home" class="page" style="display:block;">
+
+<div class="grid">
+
+<div class="card" onclick="showPage('saree')">
+<img src="IMG_20260821_215702.png" alt="Saree">
+<h3>Saree</h3>
+</div>
+
+<div class="card" onclick="showPage('chudi')">
+<img src="IMG_20260821_215720.png" alt="Chudidar">
+<h3>Chudidar</h3>
+</div>
+
+<div class="card" onclick="showPage('blouse')">
+<img src="IMG_20260821_215738.png" alt="Blouse">
+<h3>Blouse</h3>
+</div>
+
+<div class="card" onclick="showPage('kids')">
+<img src="IMG_20260821_220520.png" alt="Kids Wear">
+<h3>Kids Wear</h3>
+</div>
+
+</div>
+
+</div>
+<!-- SAREE PAGE -->
+
+<div id="saree" class="page">
+
+<button class="back" onclick="showPage('home')">⬅ Back</button>
+
+<h2 style="text-align:center;margin-bottom:15px;">Saree Collection</h2>
+
+<div class="grid">
+
+<div class="card">
+<img src="IMG_20260821_114416.png" alt="">
+<h3>SAREE</h3>
+<button onclick="window.location.href='https://wa.me/919484374018'">Order Now</button>
+</div>
+
+<div class="card">
+<img src="file_00000000095082088ebf7a712194337b.png" alt="">
+<h3>SAREE</h3>
+<button onclick="window.location.href='https://wa.me/919484374018'">Order Now</button>
+</div>
+
+<div class="card">
+<img src="file_0000000076688208a173f1a1909167c0.png" alt="">
+<h3>SAREE</h3>
+<button onclick="window.location.href='https://wa.me/919484374018'">Order Now</button>
+</div>
+
+</div>
+
+</div>
+<!-- CHUDIDAR PAGE -->
+
+<div id="chudi" class="page">
+
+<button class="back" onclick="showPage('home')">⬅ Back</button>
+
+<h2 style="text-align:center;margin-bottom:15px;">Chudidar Collection</h2>
+
+<div class="grid">
+
+<div class="card">
+<img src="IMG_20260821_114432.png" alt="">
+<h3>CHUDIDAR</h3>
+<button onclick="window.location.href='https://wa.me/919484374018'">Order Now</button>
+</div>
+
+<div class="card">
+<img src="file_0000000036b48208b8fa417df15f16ec.png" alt="">
+<h3>CHUDIDAR</h3>
+<button onclick="window.location.href='https://wa.me/919484374018'">Order Now</button>
+</div>
+
+<div class="card">
+<img src="file_000000007b9082119f654326a0bf401d.png" alt="">
+<h3>CHUDIDAR</h3>
+<button onclick="window.location.href='https://wa.me/919484374018'">Order Now</button>
+</div>
+
+</div>
+
+</div>
+<!-- BLOUSE PAGE -->
+
+<div id="blouse" class="page">
+
+<button class="back" onclick="showPage('home')">⬅ Back</button>
+
+<h2 style="text-align:center;margin-bottom:15px;">Blouse Collection</h2>
+
+<div class="grid">
+
+<div class="card">
+<img src="IMG_20260821_114448.png" alt="">
+<h3>BLOUSE</h3>
+<button onclick="window.location.href='https://wa.me/919484374018'">Order Now</button>
+</div>
+
+<div class="card">
+<img src="file_00000000cdb88208a9febeb72332ad7b.png" alt="">
+<h3>BLOUSE</h3>
+<button onclick="window.location.href='https://wa.me/919484374018'">Order Now</button>
+</div>
+
+<div class="card">
+<img src="file_000000007fd082088ed67e0b2a7428b6.png" alt="">
+<h3>BLOUSE</h3>
+<button onclick="window.location.href='https://wa.me/919484374018'">Order Now</button>
+</div>
+
+</div>
+
+</div>
+<!-- KIDS WEAR PAGE -->
+
+<div id="kids" class="page">
+
+<button class="back" onclick="showPage('home')">⬅ Back</button>
+
+<h2 style="text-align:center;margin-bottom:15px;">Kids Wear Collection</h2>
+
+<div class="grid">
+
+<div class="card">
+<img src="file_000000004e54820889b859a5531dc3c2.png" alt="">
+<h3>KIDS WEAR</h3>
+<button onclick="window.location.href='https://wa.me/919484374018'">Order Now</button>
+</div>
+
+<div class="card">
+<img src="file_0000000078008211bac3d1048d945910.png" alt="">
+<h3>KIDS WEAR</h3>
+<button onclick="window.location.href='https://wa.me/919484374018'">Order Now</button>
+</div>
+
+<div class="card">
+<img src="file_000000007db882088cdc84cb2eb784ef.png" alt="">
+<h3>KIDS WEAR</h3>
+<button onclick="window.location.href='https://wa.me/919484374018'">Order Now</button>
+</div>
+
+</div>
+
+</div>
+<script>
+function showPage(pageId){
+
+const pages = document.querySelectorAll(".page");
+pages.forEach(function(page){
+page.style.display = "none";
+});
+
+document.getElementById(pageId).style.display = "block";
+}
+</script>
+
+</body>
+</html>
